@@ -21,7 +21,10 @@ export const iterativeFibonacci = (sequenceIndex: number): number => {
   return next;
 };
 
-export const recursiveFibonacci = (sequenceIndex: number): number => {
+export const recursiveFibonacci = (
+  sequenceIndex: number,
+  cache: Record<number, number> = {}
+): number => {
   if (sequenceIndex === 0) {
     return 0;
   }
@@ -30,11 +33,17 @@ export const recursiveFibonacci = (sequenceIndex: number): number => {
     return 1;
   }
 
-  return (
-    recursiveFibonacci(sequenceIndex - 1) +
-    recursiveFibonacci(sequenceIndex - 2)
-  );
+  if (cache[sequenceIndex]) {
+    return cache[sequenceIndex];
+  }
+
+  // eslint-disable-next-line no-param-reassign
+  cache[sequenceIndex] =
+    recursiveFibonacci(sequenceIndex - 1, cache) +
+    recursiveFibonacci(sequenceIndex - 2, cache);
+
+  return cache[sequenceIndex];
 };
 
-console.log('iterative', iterativeFibonacci(8));
-console.log('recursive', recursiveFibonacci(8));
+console.log('iterative', iterativeFibonacci(100));
+console.log('recursive', recursiveFibonacci(100));
