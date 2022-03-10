@@ -36,5 +36,5 @@ export const recursiveFibonacci = (sequenceIndex: number): number => {
   );
 };
 
-console.log(iterativeFibonacci(8));
-console.log(recursiveFibonacci(8));
+console.log('iterative', iterativeFibonacci(8));
+console.log('recursive', recursiveFibonacci(8));
