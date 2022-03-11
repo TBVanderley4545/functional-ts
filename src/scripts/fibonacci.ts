@@ -45,5 +45,5 @@ export const recursiveFibonacci = (
   return cache[sequenceIndex];
 };
 
-console.log('iterative', iterativeFibonacci(100));
-console.log('recursive', recursiveFibonacci(100));
+console.log('iterative', iterativeFibonacci(10));
+console.log('recursive', recursiveFibonacci(10));
