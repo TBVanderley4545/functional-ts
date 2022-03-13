@@ -1,9 +1,9 @@
 {
   "name": "functional-ts",
   "private": true,
-  "type": "module",
   "version": "0.0.0",
   "scripts": {
+    "runLocal": "ts-node",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
