@@ -1,6 +1,8 @@
+import { greaterThanFour, isEven, isOdd, isPrime } from '../math/helpers';
 import { filter } from './filter';
 import { wholes } from './sampleInput';
 
-const filterPredicate = (curr: number) => curr % 2 === 0;
-
-console.log(filter(filterPredicate, wholes));
+console.log(filter(isEven, wholes));
+console.log(filter(isOdd, wholes));
+console.log(filter(greaterThanFour, wholes));
+console.log(filter(isPrime(wholes), wholes));
