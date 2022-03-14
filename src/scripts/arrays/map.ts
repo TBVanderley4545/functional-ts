@@ -1,11 +1,16 @@
-// import { length } from './length';
+import { head } from './head';
+import { length } from './length';
+import { tail } from './tail';
 
-// export const map = <T>(
-//   predicateFn: Function,
-//   inputArray: Array<T>
-// ): Array<T> => {
-//   if (length(inputArray)) {
-//     return [];
-//   }
+export const map = <T>(
+  predicateFn: Function,
+  inputArray: Array<T>
+): Array<T> => {
+  if (length(inputArray) === 0) {
+    return [];
+  }
 
-// };
+  const mappedFirst = predicateFn(head(inputArray));
+
+  return [mappedFirst, ...map(predicateFn, tail(inputArray))];
+};
