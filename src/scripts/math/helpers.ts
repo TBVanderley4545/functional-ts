@@ -27,6 +27,8 @@ export const isPrime =
     return length(factors) === 0;
   };
 
+export const add = (addend1: number, addend2: number) => addend1 + addend2;
+
 export const multiply = (multiplicand: number, multiplier: number) =>
   multiplicand * multiplier;
 
@@ -35,3 +37,6 @@ export const divide = (dividend: number, divisor: number) => dividend / divisor;
 export const doubled = (val: number): number => multiply(val, 2);
 
 export const halved = (val: number): number => divide(val, 2);
+
+export const max = (firstNum: number, secondNum: number) =>
+  firstNum > secondNum ? firstNum : secondNum;
