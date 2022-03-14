@@ -1,3 +1,4 @@
+import { concat } from './concat';
 import { head } from './head';
 import { length } from './length';
 import { tail } from './tail';
@@ -12,5 +13,5 @@ export const map = <T>(
 
   const mappedFirst = predicateFn(head(inputArray));
 
-  return [mappedFirst, ...map(predicateFn, tail(inputArray))];
+  return concat([[mappedFirst], map(predicateFn, tail(inputArray))]);
 };

@@ -15,6 +15,7 @@ console.log(filter(isEven, wholes));
 console.log(filter(isOdd, wholes));
 console.log(filter(greaterThanFour, wholes));
 console.log(filter(isPrime(wholes), wholes));
+
 console.log(map(doubled, wholes));
 console.log(map(halved, wholes));
 console.log(map(fizzBuzz, wholes));

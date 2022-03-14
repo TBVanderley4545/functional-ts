@@ -1,20 +1,8 @@
 import { isDivisble } from '../math/helpers';
 
 export const fizzBuzz = (input: number): number | string => {
-  const divisibleByThree = isDivisble(input, 3);
-  const divisibleByFive = isDivisble(input, 5);
+  const fizz = isDivisble(input, 3) ? 'fizz' : '';
+  const buzz = isDivisble(input, 5) ? 'buzz' : '';
 
-  if (divisibleByThree && divisibleByFive) {
-    return 'fizzbuzz';
-  }
-
-  if (divisibleByThree) {
-    return 'fizz';
-  }
-
-  if (divisibleByFive) {
-    return 'buzz';
-  }
-
-  return input;
+  return fizz || buzz ? `${fizz}${buzz}` : input;
 };
