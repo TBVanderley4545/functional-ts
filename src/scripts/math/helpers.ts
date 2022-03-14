@@ -5,7 +5,7 @@ export const isEven = (num: number): boolean => num % 2 === 0;
 
 export const isOdd = (num: number): boolean => !isEven(num);
 
-export const isDivisble = (testNumber: number, divisor: number): boolean =>
+export const isDivisble = (divisor: number, testNumber: number): boolean =>
   testNumber % divisor === 0;
 
 export const greaterThanFour = (num: number): boolean => num > 4;
@@ -29,14 +29,14 @@ export const isPrime =
 
 export const add = (addend1: number, addend2: number) => addend1 + addend2;
 
-export const multiply = (multiplicand: number, multiplier: number) =>
+export const multiply = (multiplier: number, multiplicand: number) =>
   multiplicand * multiplier;
 
-export const divide = (dividend: number, divisor: number) => dividend / divisor;
+export const divide = (divisor: number, dividend: number) => dividend / divisor;
 
-export const doubled = (val: number): number => multiply(val, 2);
+export const doubled = (val: number): number => multiply(2, val);
 
-export const halved = (val: number): number => divide(val, 2);
+export const halved = (val: number): number => divide(2, val);
 
 export const max = (firstNum: number, secondNum: number) =>
   firstNum > secondNum ? firstNum : secondNum;
