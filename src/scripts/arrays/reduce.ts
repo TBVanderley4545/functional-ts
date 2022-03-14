@@ -2,11 +2,11 @@ import { head } from './head';
 import { length } from './length';
 import { tail } from './tail';
 
-export const reduce = <T>(
+export const reduce = <T, T2 = T>(
   predicateFn: Function,
-  initialValue: T,
+  initialValue: T2,
   inputArray: Array<T>
-): T => {
+): T2 => {
   if (length(inputArray) === 0) {
     return initialValue;
   }

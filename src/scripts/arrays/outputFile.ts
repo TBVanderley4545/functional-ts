@@ -23,5 +23,5 @@ console.log(map(doubled, wholes));
 console.log(map(halved, wholes));
 console.log(map(fizzBuzz, wholes));
 
-console.log(reduce(add, 0, wholes));
-console.log(reduce(max, 0, wholes));
+console.log(reduce<number>(add, 0, wholes));
+console.log(reduce<number>(max, 0, wholes));
