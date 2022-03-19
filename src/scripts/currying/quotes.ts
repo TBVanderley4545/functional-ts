@@ -1,6 +1,6 @@
 export const curriedQuote =
-  (author: string) => (year: number) => (quote: string) =>
-    `"${quote}"\n\n- ${author} (${year})`;
+  (author: string) => (year: number) => (quoteText: string) =>
+    `"${quoteText}"\n\n- ${author} (${year})`;
 
 export const quoteCrockford = curriedQuote('Doug Crockford');
 
