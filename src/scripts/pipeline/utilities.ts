@@ -24,9 +24,8 @@ export const pipeline2 =
   <T>(pipelineInput: T): T =>
     reduce(
       (val: string, currentFunc: Function) => currentFunc(val),
-      pipelineInput,
-      functionList
-    );
+      pipelineInput
+    )(functionList);
 
 export const pluralize = (singularWord: string) => `${singularWord}s`;
 
