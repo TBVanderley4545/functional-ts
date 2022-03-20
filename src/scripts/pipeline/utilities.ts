@@ -4,8 +4,8 @@ import { reduce } from '../arrays/reduce';
 import { tail } from '../arrays/tail';
 
 export const pipeline =
-  (...functionList: Array<Function>) =>
-  <T>(pipelineInput: T): T => {
+  <T>(...functionList: Array<Function>) =>
+  (pipelineInput: T): T => {
     if (length(functionList) === 0) {
       return pipelineInput;
     }
@@ -16,12 +16,12 @@ export const pipeline =
       return transformedInput;
     }
 
-    return pipeline(...tail(functionList))(transformedInput);
+    return pipeline<T>(...tail(functionList))(transformedInput);
   };
 
 export const pipeline2 =
-  (...functionList: Array<Function>) =>
-  <T>(pipelineInput: T): T =>
+  <T>(...functionList: Array<Function>) =>
+  (pipelineInput: T): T =>
     reduce(
       (val: string, currentFunc: Function) => currentFunc(val),
       pipelineInput
