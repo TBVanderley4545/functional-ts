@@ -16,15 +16,15 @@ export const capitalizeFirstLetter = (input: string) =>
   )(input);
 
 export const camelize = (input: Array<string>): Array<string> =>
-  map((curr: string, index: number) =>
+  map<string>((curr: string, index: number) =>
     index !== 0 ? capitalizeFirstLetter(curr) : curr
   )(input);
 
 export const pascalize = (input: Array<string>): Array<string> =>
-  map((curr: string) => capitalizeFirstLetter(curr))(input);
+  map<string>((curr: string) => capitalizeFirstLetter(curr))(input);
 
 export const snakeToCamel = (input: string): string =>
-  pipeline(desnake, camelize, join(''))(input);
+  pipeline<string>(desnake, camelize, join(''))(input);
 
 export const snakeToTrain = (input: string): string =>
-  pipeline(desnake, pascalize, join('-'))(input);
+  pipeline<string>(desnake, pascalize, join('-'))(input);
