@@ -12,3 +12,8 @@ export const concat = <T>(inputArrays: Array<Array<T>>): Array<T> => {
 
   return [...inputArrays[0], ...concat(tail(inputArrays))];
 };
+
+export const curriedConcat =
+  <T>(arrayToConcat: Array<T>) =>
+  (baseArray: Array<T>) =>
+    [...baseArray, ...arrayToConcat];

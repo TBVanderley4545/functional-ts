@@ -18,3 +18,4 @@ console.log(snakeToCamel('very_long_variables_should_also_work'));
 console.log(snakeToCamel('edgecase'));
 
 console.log(snakeToTrain('snake_case_string'));
+console.log(snakeToTrain('random_other_casing'));
