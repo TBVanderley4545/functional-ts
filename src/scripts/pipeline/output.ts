@@ -10,9 +10,11 @@ import {
 console.log(showSomeLove('pipeline'));
 console.log(showSomeLove('pure function'));
 console.log(showSomeLove('coffee break'));
+
 console.log(composedShowSomeLove('pipeline'));
 console.log(composedShowSomeLove('pure function'));
 console.log(composedShowSomeLove('coffee break'));
+
 console.log(loveSomeShow('pipeline'));
 console.log(composedPipe('composition'));
 console.log(composedPipe2('composition'));
