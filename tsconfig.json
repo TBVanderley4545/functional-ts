@@ -1,9 +1,15 @@
 {
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "compilerOptions": {
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "moduleResolution": "Node",
+
     "noEmit": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,

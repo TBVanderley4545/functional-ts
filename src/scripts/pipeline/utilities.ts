@@ -1,6 +1,7 @@
 import { head } from '../arrays/head';
 import { length } from '../arrays/length';
 import { reduce } from '../arrays/reduce';
+import { reverse } from '../arrays/reverse';
 import { tail } from '../arrays/tail';
 
 export const pipeline =
@@ -27,9 +28,14 @@ export const pipeline2 =
       pipelineInput
     )(functionList);
 
+export const compose =
+  <T>(...functionList: Array<Function>) =>
+  (pipelineInput: T): T =>
+    pipeline2<T>(...reverse(functionList))(pipelineInput);
+
 export const pluralize = (singularWord: string) => `${singularWord}s`;
 
-export const heart = (word: string) => `I ❤️ ${word}`;
+export const heart = (word: string) => `I ❤️  ${word}`;
 
 export const exclaim = (sentence: string) => `${sentence}!`;
 
@@ -38,6 +44,9 @@ export const showSomeLove = (input: string) =>
 
 export const loveSomeShow = (input: string) =>
   pipeline2(exclaim, heart, pluralize)(input);
+
+export const composedShowSomeLove = (input: string) =>
+  compose(exclaim)(compose(pluralize, heart)(input));
 
 export const composedPipe = (input: string) =>
   pipeline2(exclaim)(pipeline2(heart, pluralize)(input));
